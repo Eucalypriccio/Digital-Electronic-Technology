@@ -1,0 +1,98 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "D:\iVerilog\lib\ivl\system.vpi";
+:vpi_module "D:\iVerilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iVerilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iVerilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iVerilog\lib\ivl\va_math.vpi";
+S_0000016e66f95760 .scope module, "testbench" "testbench" 2 2;
+ .timescale -8 -9;
+v0000016e66f92de0_0 .var "A_t", 3 0;
+v0000016e66f93240_0 .var "B_t", 3 0;
+v0000016e66f92b60_0 .var "Cin_t", 0 0;
+v0000016e66f92980_0 .net "Cout_t", 0 0, L_0000016e66f937e0;  1 drivers
+v0000016e66f932e0_0 .net "Sum_t", 3 0, L_0000016e66f93060;  1 drivers
+S_0000016e66f958f0 .scope module, "u1" "binary_adder" 2 7, 3 1 0, S_0000016e66f95760;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 4 "Sum";
+    .port_info 4 /OUTPUT 1 "Cout";
+v0000016e66f4bf10_0 .net "A", 3 0, v0000016e66f92de0_0;  1 drivers
+v0000016e66f46f10_0 .net "B", 3 0, v0000016e66f93240_0;  1 drivers
+v0000016e66f86610_0 .net "Cin", 0 0, v0000016e66f92b60_0;  1 drivers
+v0000016e66f866b0_0 .net "Cout", 0 0, L_0000016e66f937e0;  alias, 1 drivers
+v0000016e66f95a80_0 .net "Sum", 3 0, L_0000016e66f93060;  alias, 1 drivers
+L_0000016e66fde070 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000016e66f95b20_0 .net *"_ivl_10", 0 0, L_0000016e66fde070;  1 drivers
+v0000016e66fdd850_0 .net *"_ivl_11", 4 0, L_0000016e66f92f20;  1 drivers
+v0000016e66fdd8f0_0 .net *"_ivl_13", 4 0, L_0000016e66f934c0;  1 drivers
+L_0000016e66fde0b8 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0000016e66fdd990_0 .net *"_ivl_16", 3 0, L_0000016e66fde0b8;  1 drivers
+v0000016e66fdda30_0 .net *"_ivl_17", 4 0, L_0000016e66f93100;  1 drivers
+v0000016e66fddad0_0 .net *"_ivl_3", 4 0, L_0000016e66f92ca0;  1 drivers
+L_0000016e66fde028 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000016e66fddb70_0 .net *"_ivl_6", 0 0, L_0000016e66fde028;  1 drivers
+v0000016e66f92d40_0 .net *"_ivl_7", 4 0, L_0000016e66f93740;  1 drivers
+L_0000016e66f937e0 .part L_0000016e66f93100, 4, 1;
+L_0000016e66f93060 .part L_0000016e66f93100, 0, 4;
+L_0000016e66f92ca0 .concat [ 4 1 0 0], v0000016e66f92de0_0, L_0000016e66fde028;
+L_0000016e66f93740 .concat [ 4 1 0 0], v0000016e66f93240_0, L_0000016e66fde070;
+L_0000016e66f92f20 .arith/sum 5, L_0000016e66f92ca0, L_0000016e66f93740;
+L_0000016e66f934c0 .concat [ 1 4 0 0], v0000016e66f92b60_0, L_0000016e66fde0b8;
+L_0000016e66f93100 .arith/sum 5, L_0000016e66f92f20, L_0000016e66f934c0;
+    .scope S_0000016e66f95760;
+T_0 ;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000016e66f92de0_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000016e66f93240_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000016e66f92b60_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0000016e66f92de0_0, 0, 4;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000016e66f93240_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000016e66f92b60_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0000016e66f92de0_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000016e66f93240_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000016e66f92b60_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0000016e66f92de0_0, 0, 4;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v0000016e66f93240_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000016e66f92b60_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000016e66f92de0_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000016e66f93240_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000016e66f92b60_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000016e66f95760;
+T_1 ;
+    %vpi_call 2 19 "$dumpfile", "result.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000016e66f95760 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    ".\tb_2.v";
+    ".\binary_adder.v";
